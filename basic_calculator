@@ -1,0 +1,84 @@
+
+import java.util.Scanner;
+
+public class lab2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// Create scanner
+		Scanner s = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
+		
+		// Give menu
+		System.out.println("What would you like to do?");
+		
+		//menu
+		System.out.print("\t a. Add two numbers. \n");
+		System.out.print("\t b. Subtract two numbers. \n");
+        System.out.print("\t c. Multiply two numbers. \n");
+        System.out.print("\t d. divide two numbers. \n");
+        System.out.print("Please enter a letter.");
+		
+		//
+		Object userData = input.nextLine();
+		
+		// Calculate Sum
+		if (userData.equals("a")) {
+			  //Get first number
+		      System.out.print("Enter first number: ");
+		      Double firstNumber = s.nextDouble();
+		      
+		      //Get second number
+		      System.out.print("Enter second number: ");
+		      Double secondNumber = s.nextDouble();
+		      double sum = firstNumber + secondNumber;
+			System.out.println("Your answer is: " + String.valueOf(sum));
+		}
+		
+		//Calculate Difference
+		else if (userData.equals("b")) {
+			  //Get first number
+		      System.out.print("Enter first number: ");
+		      Double firstNumber = s.nextDouble();
+		      
+		      //Get second number
+		      System.out.print("Enter second number: ");
+		      Double secondNumber = s.nextDouble();
+		      double difference = firstNumber - secondNumber;
+			System.out.println("Your answer is: " + String.valueOf(difference));
+		}
+		
+		//Calculate Product
+		else if (userData.equals("c")) {
+			  //Get first number
+		      System.out.print("Enter first number: ");
+		      Double firstNumber = s.nextDouble();
+		      
+		      //Get second number
+		      System.out.print("Enter second number: ");
+		      Double secondNumber = s.nextDouble();
+		      double product = firstNumber * secondNumber;
+			System.out.println("Your answer is: " + String.valueOf(product));
+		}
+		
+		//Calculate Quotient
+		else if (userData.equals("d")) {
+			  //Get first number
+		      System.out.print("Enter first number: ");
+		      Double firstNumber = s.nextDouble();
+		      
+		      //Get second number
+		      System.out.print("Enter second number: ");
+		      Double secondNumber = s.nextDouble();
+		      double quotient = firstNumber / secondNumber;
+			System.out.println("Your answer is: " + String.valueOf(quotient));
+		}
+		
+		//Default statement
+		
+
+
+	}
+
+}
