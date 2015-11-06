@@ -1,0 +1,111 @@
+
+package Assignment;
+
+import java.util.Scanner;
+
+public class Assignment {
+	private double score = 0.0;
+
+	public Assignment(int testScore) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public double getScore() {
+		return score;
+	}
+
+	public void setScore(double score) {
+		this.score = score;
+	}
+	
+	public static void assignmentGrade(int score) {
+		
+		char grade;
+		if (score >= 90) 	{
+			grade = 'A';
+		} else if ((score >= 80) && (score < 90))	{
+			grade = 'B';
+		} else if ((score >= 70) && (score < 80))	{
+			grade = 'C';
+		} else if ((score >= 60) && (score < 70))	{
+			grade = 'D';
+		} else	{
+			grade = 'F';
+		}
+			System.out.println("The letter grade is " + grade);
+	}
+}
+
+//create new superclass//
+package Assignment;
+import java.util.Scanner;
+
+
+public class task3 {
+
+	public static void main(String[] args) {
+		
+		int testScore = 0;
+		int numOfQuestions = 0;
+		int numMissedQuestions = 0;
+		float numPointsPerQuestions = 0;
+		Assignment homework = new Assignment(testScore);
+		Exam midTermExam = new Exam(numOfQuestions);
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter the number of questions on the exam: ");
+		numOfQuestions = input.nextInt();
+		System.out.println("Please enter the number of points per question: ");
+		numPointsPerQuestions = input.nextFloat();
+		System.out.println("Please enter the number of questions missed on the exam: ");
+		numMissedQuestions = input.nextInt();
+		
+		midTermExam.getNumPointsPer(numPointsPerQuestions);
+		midTermExam.getNumMissed(numMissedQuestions);
+		midTermExam.getNumQuestions(numOfQuestions);
+		testScore = (int) ((numOfQuestions - numMissedQuestions)*numPointsPerQuestions);
+		
+		System.out.println("The number of questions missed was: " + numMissedQuestions + " out of a total: " 
+				+ numOfQuestions + ". Evaluated at " + numPointsPerQuestions + " points per question, resulted"
+				 + " in a test score of: " + testScore);
+		
+		homework.assignmentGrade(testScore);
+	}
+
+}
+
+//create new superclass//
+package Assignment;
+public class Exam extends Assignment {
+
+		public static int score;
+
+		public Exam(int testScore) {
+		super(testScore);
+	}
+		int numQuestions;
+		float numPointsPerQuestion;
+		int numMissedQuestions;
+
+	public float getNumPointsPer(float numPointsPerQuestions) {
+		return numPointsPerQuestion;
+	}
+	
+	public int getNumMissed(int numMissedQuestions) {
+		return numMissedQuestions;
+	}
+	public int getNumQuestions(int numOfQuestions) {
+		return numQuestions;
+	}
+	public void Exam(int numQuestions, int numMissedQuestions, float numPointsPerQuestion) {
+		int numCorrect;
+		int score;
+		numCorrect = numQuestions - numMissedQuestions;
+		score = (int) (numCorrect * numPointsPerQuestion);
+	}
+
+	public int Exam(int score) {
+		return score;
+		
+	}
+}
